@@ -5,7 +5,11 @@ spring:
     username: root
     password: cwj040812
     driver-class-name: com.mysql.cj.jdbc.Driver
-
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 100MB
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   configuration:
@@ -13,3 +17,10 @@ mybatis-plus:
 
 server:
   port: 8080
+# 阿里云密钥配置
+aliyun:
+  oss:
+    endpoint: oss-cn-nanjing.aliyuncs.com
+    accessKeyId: ${ALIYUN_ACCESS_KEY_ID}
+    accessKeySecret: ${ALIYUN_ACCESS_KEY_SECRET}
+    bucketName: yeluzi08-bucket
